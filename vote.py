@@ -50,7 +50,7 @@ def vote_once(form, value):
     try:
         init = c.get(base_url + str(form) + "/", headers=redirect, verify=False, proxies=current_proxy)
     except:
-        print "error with proxy"
+        print ("error with proxy")
         #proxies.remove(current_proxy_num)
         return None
 
@@ -64,7 +64,7 @@ def vote_once(form, value):
     try:
         send = c.get(request, headers=redirect, verify=False, proxies=current_proxy)
     except:
-        print "error with proxy"
+        print("error with proxy")
         #proxies.remove(current_proxy_num)
         return None
 
@@ -82,22 +82,22 @@ def vote(form, value, times, wait_min = None, wait_max = None):
             if wait_min and wait_max:
                 seconds = random.randint(wait_min, wait_max)
             else:
-                seconds = 3
+                seconds = 20
 
-            print "Voted (time number " + str(i) + ")!"
+            print ("Voted (time number " + str(i) + ")!")
             time.sleep(seconds)
         else:
-            print "Locked.  Sleeping for 60 seconds."
+            print ("Locked.  Sleeping for 60 seconds.")
             i-=1
-            time.sleep(60)
+            time.sleep(80)
         i += 1
 
 # Initialize these to the specific form and how often you want to vote
-poll_id = 0
-answer_id = 0
-number_of_votes = 10
-wait_min = None
-wait_max = None
+poll_id =
+answer_id =
+number_of_votes = 10000
+wait_min = 6
+wait_max = 14
 
 get_all_proxies()
 get_all_useragents()
